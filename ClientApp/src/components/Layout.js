@@ -4,12 +4,22 @@ import { NavMenu } from './NavMenu';
 import { Collapse, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
-
-
-
 export class Layout extends Component {
     static displayName = Layout.name;
+    constructor(props) {
+        super(props);
 
+        this.toggleNavbar = this.toggleNavbar.bind(this);
+        this.state = {
+            collapsed: true
+        };
+    }
+
+    toggleNavbar() {
+        this.setState({
+            collapsed: !this.state.collapsed
+        });
+    }
     render() {
         return (
             <div>
@@ -55,7 +65,7 @@ export class OPSHeader extends Component {
                                         <div className='ontario-application-subheader__menu-container'>
                                             <ul className='ontario-application-subheader__menu ontario-show-for-large'>
                                                 <NavItem>
-                                                    <NavLink tag={Link}  to="/counter">Counter</NavLink>
+                                                    <NavLink tag={Link} to="/counter">Counter</NavLink>
                                                 </NavItem>
                                                 <NavItem>
                                                     <NavLink tag={Link} to="/fetch-data">Fetch data</NavLink>
@@ -69,7 +79,7 @@ export class OPSHeader extends Component {
                                                     <NavLink tag={Link} to="/counter">Counter</NavLink>
                                                 </NavItem>
                                                 <NavItem>
-                                                    <NavLink tag={Link}  to="/fetch-data">Fetch data</NavLink>
+                                                    <NavLink tag={Link} to="/fetch-data">Fetch data</NavLink>
                                                 </NavItem>
                                             </ul>
 
