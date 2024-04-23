@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Container } from 'reactstrap';
-import { NavMenu } from './NavMenu';
 import { Collapse, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
@@ -23,7 +22,6 @@ export class Layout extends Component {
     render() {
         return (
             <div>
-                <NavMenu />
                 <Container>
                     {this.props.children}
                 </Container>
@@ -51,50 +49,47 @@ export class OPSHeader extends Component {
                             </div>
                         </div>
                     </header>
-
                     <div className='ontario-application-subheader-menu__container'>
                         <section className='ontario-application-subheader'>
                             <div className='ontario-row'>
                                 <div className='ontario-columns ontario-small-12 ontario-application-subheader__container'>
-                                    <Navbar>
-                                        <p className='ontario-application-subheader__heading'>
-                                            <NavbarBrand tag={Link} to="/">Application name</NavbarBrand>
-                                        </p>
-                                        <NavbarToggler onClick={this.toggleNavbar}></NavbarToggler>
 
-                                        <div className='ontario-application-subheader__menu-container'>
-                                            <ul className='ontario-application-subheader__menu ontario-show-for-large'>
-                                                <NavItem>
-                                                    <NavLink tag={Link} to="/counter">Counter</NavLink>
-                                                </NavItem>
-                                                <NavItem>
-                                                    <NavLink tag={Link} to="/fetch-data">Fetch data</NavLink>
-                                                </NavItem>
-                                                <NavItem>
-                                                    <NavLink href='#'>Link 3</NavLink>
-                                                </NavItem>
-                                            </ul>
-                                            <ul className='ontario-application-subheader__menu ontario-hide-for-small ontario-show-for-medium ontario-hide-for-large'>
-                                                <NavItem>
-                                                    <NavLink tag={Link} to="/counter">Counter</NavLink>
-                                                </NavItem>
-                                                <NavItem>
-                                                    <NavLink tag={Link} to="/fetch-data">Fetch data</NavLink>
-                                                </NavItem>
-                                            </ul>
+                                    <p className='ontario-application-subheader__heading'>
+                                        <a tag={Link} to="/">All Things Movies and TV</a>
+                                    </p>
+                                    <NavbarToggler onClick={this.toggleNavbar}></NavbarToggler>
 
-                                            <button className='ontario-header__menu-toggler ontario-header-button ontario-header-button--with-outline' id='ontario-header-menu-toggler' aria-controls='ontario-navigation' aria-label='Show navigation menu' type='button'>
-                                                <svg className='ontario-icon' focusable='false' viewBox='0 0 24 24' preserveAspectRatio='xMidYMid meet'>
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
-                                                        <path
-                                                            fill="#000"
-                                                            d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
-                                                        ></path>
-                                                    </svg> </svg>
-                                                <span>Menu</span>
-                                            </button>
-                                        </div>
-                                    </Navbar>
+                                    <div className='ontario-application-subheader__menu-container'>
+                                        <ul className='ontario-application-subheader__menu ontario-show-for-large'>
+                                            <li>
+                                                <a tag={Link} to="/counter">Counter</a>
+                                            </li>
+                                            <li>
+                                                <a tag={Link} to="/fetch-data">Fetch data</a>
+                                            </li>
+                                            <li>
+                                                <a to="mymovies">My Movies</a>
+                                            </li>
+                                        </ul>
+                                        <ul className='ontario-application-subheader__menu ontario-hide-for-small ontario-show-for-medium ontario-hide-for-large'>
+                                            <li>
+                                                <a tag={Link} to="/counter">Counter</a>
+                                            </li>
+                                            <li>
+                                                <a tag={Link} to="/fetch-data">Fetch data</a>
+                                            </li>
+                                        </ul>
+                                        <button className='ontario-header__menu-toggler ontario-header-button ontario-header-button--with-outline' id='ontario-header-menu-toggler' aria-controls='ontario-navigation' aria-label='Show navigation menu' type='button'>
+                                            <svg className='ontario-icon' focusable='false' viewBox='0 0 24 24' preserveAspectRatio='xMidYMid meet'>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
+                                                    <path
+                                                        fill="#000"
+                                                        d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+                                                    ></path>
+                                                </svg> </svg>
+                                            <span>Menu</span>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </section>
@@ -112,13 +107,15 @@ export class OPSHeader extends Component {
                             </button>
                             <div className="ontario-navigation__container">
                                 <ul>
-                                    <NavItem className="ontario-show-for-small-only">
-                                        <NavLink tag={Link} to="/counter">Counter</NavLink>
-                                    </NavItem>
-                                    <NavItem className="ontario-show-for-small-only">
-                                        <NavLink tag={Link} to="/fetch-data">Fetch data</NavLink>
-                                    </NavItem>
-                                    <li className="ontario-hide-for-large"><a href="#">Link 3</a></li>
+                                    <li className="ontario-show-for-small-only">
+                                        <a tag={Link} to="/counter">Counter</a>
+                                    </li>
+                                    <li className="ontario-show-for-small-only">
+                                        <a tag={Link} to="/fetch-data">Fetch data</a>
+                                    </li>
+                                    <li className="ontario-hide-for-large">
+                                        <a to="mymovies">My Movies</a>
+                                    </li>
                                     <li className="ontario-hide-for-large"><a href="#">Link 4</a></li>
                                     <li className="ontario-hide-for-large"><a href="#">Link 5</a></li>
                                     <li><a href="#">Link 6</a></li>

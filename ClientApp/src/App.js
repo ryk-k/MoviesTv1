@@ -19,8 +19,7 @@ export default class App extends Component {
                         })}
                     </Routes>
                 </Layout>
-                <OPSFooter>
-                </OPSFooter>
+                <OPSFooter></OPSFooter>
             </div>
         );
     }
