@@ -71,7 +71,7 @@ jobs:
     needs: build
     environment:
       name: 'Development'
-      url: ${{ http://moviestv1-ryk-k.azurewebsites.net/ }}
+      url: ${{ http://MoviesTv1-ryk-k202404222345.azurewebsites.net/ }}
 
     steps:
       - name: Download artifact from build job
